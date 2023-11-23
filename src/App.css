@@ -1,0 +1,47 @@
+html{
+  background-color: black;
+  margin:0;
+  overflow-x: hidden;
+}
+@font-face {
+  font-family: "circularStd";   /*Can be any text*/
+  src: local("circular-std"),
+    url("./fonts/circular-std.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "anonymousPro";   /*Can be any text*/
+  src: local("AnonymousPro-Regular"),
+    url("./fonts/AnonymousPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "spotifyBlack";   /*Can be any text*/
+  src: local("CircularSpotifyText-Black"),
+    url("./fonts/CircularSpotifyText-Black.otf") format("truetype");
+}
+@font-face {
+  font-family: "spotifyItalianBlack";   /*Can be any text*/
+  src: local("CircularSpotifyText-BlackItalian"),
+    url("./fonts/CircularSpotifyText-BlackItalic.otf") format("truetype");
+}
+@font-face {
+  font-family: "spotifyBold";   /*Can be any text*/
+  src: local("CircularSpotifyText-Bold"),
+    url("./fonts/CircularSpotifyText-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: "spotifyBook";   /*Can be any text*/
+  src: local("CircularSpotifyText-Book"),
+    url("./fonts/CircularSpotifyText-Book.otf") format("truetype");
+}
+@font-face {
+  font-family: "spotifyLight";   /*Can be any text*/
+  src: local("CircularSpotifyText-Light"),
+    url("./fonts/CircularSpotifyText-Light.otf") format("truetype");
+}
+@font-face {
+  font-family: "spotifyMedium";   /*Can be any text*/
+  src: local("CircularSpotifyText-Medium"),
+    url("./fonts/CircularSpotifyText-Medium.otf") format("truetype");
+}

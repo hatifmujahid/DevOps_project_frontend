@@ -1,0 +1,12 @@
+.homeimg::before{
+    opacity: 0.5;
+    background-image: url('src/assets/homeBG.png');
+    background-size: "contain";
+    background-position: "top 4em center";
+    background-repeat: "no-repeat";
+    height: "100%",
+}
+#glow:hover{
+  
+        box-shadow: 0 0 5px 5px rgba(255, 0, 0, 0.5);
+}
