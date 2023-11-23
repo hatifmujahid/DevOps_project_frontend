@@ -14,8 +14,14 @@ steps:
     npm run build
     vite build
   displayName: 'npm install and build'
-- task: PublishBuildArtifacts@1
+- task: DownloadBuildArtifacts@1
   inputs:
-    PathtoPublish: 'dist'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'dist'
+    downloadPath: '$(System.ArtifactsDirectory)'
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: 'dist'
+#     ArtifactName: 'drop'
+#     publishLocation: 'Container'
