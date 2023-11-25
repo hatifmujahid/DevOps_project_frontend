@@ -16,10 +16,19 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'run build'
-    
+
+
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'specific'
+    project: 'ab3111f1-f446-447a-825e-d46e3e2b55ee'
+    pipeline: '13'
+    buildVersionToDownload: 'latest'
+    downloadType: 'specific'
+    downloadPath: '$(System.ArtifactsDirectory)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-    
