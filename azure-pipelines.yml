@@ -12,23 +12,16 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
+
 - task: Npm@1
   inputs:
     command: 'custom'
     customCommand: 'run build'
-
-
-- task: DownloadBuildArtifacts@1
+- task: Npm@1
   inputs:
-    buildType: 'specific'
-    project: 'ab3111f1-f446-447a-825e-d46e3e2b55ee'
-    pipeline: '13'
-    buildVersionToDownload: 'latest'
-    downloadType: 'specific'
-    downloadPath: 'buildpath'
+    command: 'publish'
+    publishRegistry: 'useFeed'
+    publishFeed: '36ac4949-16b9-436b-a6ba-beb5655f2377'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'buildpath'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+
+
