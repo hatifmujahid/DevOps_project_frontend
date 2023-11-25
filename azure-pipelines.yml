@@ -25,10 +25,10 @@ steps:
     pipeline: '13'
     buildVersionToDownload: 'latest'
     downloadType: 'specific'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    downloadPath: 'buildpath'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: 'buildpath'
     ArtifactName: 'drop'
     publishLocation: 'Container'
