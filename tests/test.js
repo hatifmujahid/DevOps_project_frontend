@@ -1,14 +1,14 @@
-// // import { cleanup } from '@testing-library/react'
-// // import { expect } from 'vitest';
-// // import * as matchers from '@testing-library/jest-dom/matchers';
+import { cleanup } from '@testing-library/react'
+import { expect } from 'vitest';
+import * as matchers from '@testing-library/jest-dom/matchers';
 
-// // // extends Vitest's expect method with methods from react-testing-library
-// // expect.extend(matchers)
+// extends Vitest's expect method with methods from react-testing-library
+expect.extend(matchers)
 
-// // // runs a cleanup after each test case
-// // afterEach(() => {
-// //   cleanup()
-// // })
+// runs a cleanup after each test case
+afterEach(() => {
+  cleanup()
+})
 
 // //import chromedriver in order for Selenium to open a Chrome browser by itself
 // import chromedriver from 'chromedriver';

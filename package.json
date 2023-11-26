@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "precommit": "lint-staged",
     "prepare": "husky install",
-    "test": "vitest"
+    "test": "vitest",
+    "testci": "vitest run --reporter=default --reporter=junit --outputFile=reports/junit.xml"
   },
   "dependencies": {
     "@react-spring/parallax": "^9.7.3",
