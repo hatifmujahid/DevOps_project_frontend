@@ -22,17 +22,6 @@ steps:
     command: 'publish'
     publishRegistry: 'useFeed'
     publishFeed: '36ac4949-16b9-436b-a6ba-beb5655f2377'
-- stage: Build
-  displayName: Build image
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'docker'
-        repository: 'cyberrizzler/frontend'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+
+
+
