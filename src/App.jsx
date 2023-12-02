@@ -12,7 +12,6 @@ import TeamPage from './components/TeamPage';
 import teamList from './components/teamList';
 import teambackground from './assets/teamBackground.jpg';
 import teamHeader from './assets/teamHeader.png';
-import Navbar from './components/Navbar';
 import Footer from './components/footer';
 import { useEffect, useState } from 'react';
 import { render } from 'react-dom';
