@@ -1,0 +1,42 @@
+trigger:
+- main
+
+pool: DevOps project Pool
+stages:
+- stage: Build
+  displayName: Build
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'docker'
+        repository: 'cyberrizzler/frontend'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+- stage: Deploy
+  displayName: Deploy
+  jobs:
+  - job: 
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+      displayName: 'Install Node.js'
+
+    - task: Npm@1
+      inputs:
+        command: 'install'
+
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        customCommand: 'run build'
+    - task: Npm@1
+      inputs:
+        command: 'publish'
+        publishRegistry: 'useFeed'
+        publishFeed: '36ac4949-16b9-436b-a6ba-beb5655f2377'
