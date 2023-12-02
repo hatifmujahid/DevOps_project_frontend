@@ -23,5 +23,13 @@ steps:
     publishRegistry: 'useFeed'
     publishFeed: '36ac4949-16b9-436b-a6ba-beb5655f2377'
 
+- name: Set Build Number
+  run: echo "BUILD_NUMBER=$((BUILD_NUMBER + 1))"
 
+- name: Build Docker Image
+  run: docker build -t devopsprojecttheboys.azurecr.io/frontendcc:<BUILD_NUMBER> .
+
+
+- name: Push Docker Image to Registry
+  run: docker push devopsprojecttheboys.azurecr.io/frontendcc:<BUILD_NUMBER>
 
