@@ -22,18 +22,17 @@ steps:
     command: 'publish'
     publishRegistry: 'useFeed'
     publishFeed: '36ac4949-16b9-436b-a6ba-beb5655f2377'
-- task: SetBuildNumber@1
-  inputs:
-    run: 'echo "BUILD_NUMBER=$((BUILD_NUMBER + 1))"'
-- task: Docker@2
-  inputs:
-    containerRegistry: 'devopsprojecttheboys'
-    repository: 'frontendcc'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-    tags: |
-      $(Build.BuildNumber)
-    run: 'docker build -t devopsprojecttheboys.azurecr.io/frontendcc:<BUILD_NUMBER> .'
-- task: Push Docker Image to Registry
-  run: docker push devopsprojecttheboys.azurecr.io/frontendcc:<BUILD_NUMBER>
-
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'docker'
+        repository: 'cyberrizzler/frontend'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
